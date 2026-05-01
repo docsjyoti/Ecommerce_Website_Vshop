@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <h2>VSHOP</h2>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1 id="shopTxt">SHOP HERE!</h1>
+    <button id="loginBtn">Login</button>
+
+    <!-- MODAL -->
+    <div id="loginModal" class="modal">
+
+        <div class="modal-content">
+            
+            <!-- CLOSE BUTTON -->
+            <span id="closeBtn">&times;</span>
+
+            <h2>Login</h2>
+
+            <!-- USERNAME -->
+            <input id="username" type="text" placeholder="Username">
+            <small class="error" id="userError"></small>
+
+            <!-- EMAILID -->
+            <input id="emailId" type="email" placeholder="Email-ID">
+            <small class="error" id="InvalidEmail"></small>
+
+            <!-- PASSWORD -->
+            <div class="password-wrapper">
+                <input id="password" type="password" placeholder="Password">
+                <span id="togglePassword">👁️</span>
+            </div>
+            <small class="error" id="passError"></small>
+
+            <!-- SUBMIT -->
+            <button id="submitBtn">Login</button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a class="footer-link" href="https://www.semrush.com/website/top/global/e-commerce-and-retail/">About Us</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

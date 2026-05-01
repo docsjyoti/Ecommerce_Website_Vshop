@@ -1,0 +1,187 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    background: #29522c;
+    color: white;
+    font-size: 35px;
+    font-family: cursive;
+    padding: 4px 1;     /* ↓ reduce vertical space */
+    line-height: 2;     /* prevents extra height from font */
+    justify-content: center;
+}
+
+/* Ensure no extra spacing from h2 */
+header h2 {
+    margin: 0;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/Login_banner.jpg") center/cover no-repeat;
+    /* Make hero a positioning container */
+    position: relative;   /* important */
+}
+
+/* Position text below header */
+#shopTxt {
+    position: absolute;
+    top: 20px;            /* distance from top of hero (adjust as needed) */
+    left: 50%;
+    transform: translateX(-50%);  /* horizontal center */
+
+    color: black;
+    text-shadow: 0 0 10px rgb(198, 238, 85);
+
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Keep animation clean */
+@keyframes float {
+    0%   { transform: translate(-50%, 0); }
+    50%  { transform: translate(-50%, -10px); }
+    100% { transform: translate(-50%, 0); }
+}
+
+/* BUTTON */
+/* Default: translucent button */
+#loginBtn {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.35); /* translucent */
+    color: #000;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 8px;
+
+    backdrop-filter: blur(6px); /* glass effect */
+    transition: all 0.25s ease;
+}
+
+/* Hover (optional polish) */
+#loginBtn:hover {
+    background: rgba(94, 135, 67, 0.645);
+}
+
+/* Active/Clicked state: solid */
+#loginBtn.active {
+    background: linear-gradient(135deg, #3d711c, #6d7935);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+/* SHOW MODAL */
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* MODAL BOX */
+.modal-content {
+    position: relative;
+
+    width: 420px;
+    padding: 30px;
+
+    background: linear-gradient(135deg,#f5f7fa,#c3cfe2);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    animation: pop 0.3s;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* CLOSE */
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+/* INPUT */
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* PASSWORD WRAPPER */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0 10px;
+}
+
+.password-wrapper input {
+    border: none;
+    flex: 1;
+}
+
+#togglePassword {
+    cursor: pointer;
+}
+
+/* ERROR */
+.error {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+/* BUTTON */
+#submitBtn {
+    padding: 10px;
+    background: #445a2d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer-link {
+    display: block;
+    font-size: larger;
+    background: #29522c;
+    padding: 10px;
+    line-height: 4; 
+    color: black;
+}
